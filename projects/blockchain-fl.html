@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Blockchain-federated learning | Shabd Sahay</title>
+<meta name="author" content="Shabd Sahay">
+<meta name="description" content="Adaptive multi-metric aggregation for cost-efficient and fair blockchain-federated learning">
+<meta name="keywords" content="federated learning, machine learning, byzantine-robust aggregation, IIIT Bhopal, Shabd Sahay">
+<style>:root { --max-content-width: 930px; }</style>
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+<link rel="stylesheet" href="../assets/css/fontawesome.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700&amp;display=swap">
+<link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/main.css">
+
+<link rel="stylesheet" href="../assets/css/custom.css">
+<style id="highlight_theme_light"></style><style id="highlight_theme_dark" media="none"></style>
+<script>
+  // Storage can be blocked in sandboxed viewers; fall back to an in-memory store so the theme toggle still works.
+  (function () {
+    try { window.localStorage.getItem("theme"); }
+    catch (e) {
+      var mem = {};
+      try { Object.defineProperty(window, "localStorage", { value: { getItem: function (k) { return k in mem ? mem[k] : null; }, setItem: function (k, v) { mem[k] = String(v); }, removeItem: function (k) { delete mem[k]; } } }); } catch (e2) {}
+    }
+  })();
+</script>
+<script src="../assets/js/theme.js"></script>
+<script>initTheme();</script>
+</head>
+<body class="fixed-top-nav ">
+<header>
+<nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+<div class="container">
+<a class="navbar-brand title font-weight-lighter" href="../index.html"><span class="font-weight-bold">Shabd</span> Sahay</a>
+<button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="sr-only">Toggle navigation</span><span class="icon-bar top-bar"></span><span class="icon-bar middle-bar"></span><span class="icon-bar bottom-bar"></span>
+</button>
+<div class="collapse navbar-collapse navbar-collapse-main text-right" id="navbarNav">
+<ul class="navbar-nav ml-auto navbar-menu-list flex-nowrap">
+<li class="nav-item "><a class="nav-link" href="../index.html">about</a></li><li class="nav-item "><a class="nav-link" href="../publications.html">publications</a></li><li class="nav-item active"><a class="nav-link" href="../projects.html">projects <span class="sr-only">(current)</span></a></li><li class="nav-item "><a class="nav-link" href="../cv.html">CV</a></li>
+<li class="toggle-container"><button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"><i class="fa-half-sun-moon" id="light-toggle-system"></i><i class="fa-solid fa-moon" id="light-toggle-dark"></i><i class="fa-solid fa-sun" id="light-toggle-light"></i></button></li>
+</ul>
+</div>
+</div>
+</nav>
+<progress id="progress" value="0"><div class="progress-container"><span class="progress-bar"></span></div></progress>
+</header>
+<div class="container mt-5" role="main">
+<div class="post">
+<header class="post-header"><h1 class="post-title">Blockchain-federated learning</h1><p class="post-description">Adaptive multi-metric aggregation for cost-efficient and fair blockchain-federated learning</p></header>
+<article>
+<p><strong>Dec 2025 – Oct 2026 · Applied Intelligence (Springer)</strong><br><span>Ripunjay Sharma, <strong>Shabd Sahay</strong>, Yatendra Sahu, Gagan Vishwakarma, Arpita Bhargava</span><br><em>Federated Learning · Blockchain · Outlier Detection · Fraud Detection</em></p>
+<figure class="fig"><img src="../assets/img/blockchain_fl.png" class="" alt="Blockchain-federated learning figure"><figcaption>Schematic of the aggregation pipeline described in the paper: client updates pass Z-score filtering, then Mahalanobis-distance outlier detection with weight damping, before the aggregate is replicated across clients in the hybrid blockchain architecture.</figcaption></figure>
+<h2>key results</h2>
+<div class="table-responsive"><table class="table table-sm table-borderless"><tr><th scope="row" style="width: 45%">F1-score</th><td>0.828 ± 0.018</td></tr><tr><th scope="row" style="width: 45%">AUC</th><td>0.952 ± 0.009</td></tr></table></div>
+<h2>what I did</h2>
+<ul><li>Built a framework that jointly optimizes accuracy, F1-score and weight dampening for fraud-detection data.</li><li>Designed a two-stage aggregation pipeline combining Z-score filtering and Mahalanobis-distance-based outlier detection with weight damping, replicated across clients in a hybrid architecture.</li><li>Achieved an F1-score of 0.828 (±0.018) and AUC of 0.952 (±0.009) under a stable heterogeneous client distribution.</li></ul>
+<div class="publications"><div class="links"><a href="https://doi.org/10.1007/s10489-026-07561-y" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a></div></div>
+<p class="mt-4"><a href="../projects.html">← all projects</a></p>
+</article>
+</div>
+</div>
+<footer class="fixed-bottom" role="contentinfo">
+<div class="container mt-0">© Copyright 2026 Shabd Sahay. Based on the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme (MIT).</div>
+</footer>
+<script>window.alFolio = { compatBootstrap: false };</script>
+<script src="../assets/js/nav-toggle.js"></script>
+<script src="../assets/js/no_defer.js"></script>
+<script defer src="../assets/js/common.js"></script>
+<script defer src="../assets/js/progress-bar.js"></script>
+</body>
+</html>

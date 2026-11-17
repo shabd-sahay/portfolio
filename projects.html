@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>projects | Shabd Sahay</title>
+<meta name="author" content="Shabd Sahay">
+<meta name="description" content="Shabd Sahay: machine learning researcher working on federated learning and robust aggregation. M.Tech AI, IIIT Bhopal.">
+<meta name="keywords" content="federated learning, machine learning, byzantine-robust aggregation, IIIT Bhopal, Shabd Sahay">
+<style>:root { --max-content-width: 930px; }</style>
+<link rel="stylesheet" href="assets/css/tailwind.css">
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700&amp;display=swap">
+<link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/main.css">
+
+<link rel="stylesheet" href="assets/css/custom.css">
+<style id="highlight_theme_light"></style><style id="highlight_theme_dark" media="none"></style>
+<script>
+  // Storage can be blocked in sandboxed viewers; fall back to an in-memory store so the theme toggle still works.
+  (function () {
+    try { window.localStorage.getItem("theme"); }
+    catch (e) {
+      var mem = {};
+      try { Object.defineProperty(window, "localStorage", { value: { getItem: function (k) { return k in mem ? mem[k] : null; }, setItem: function (k, v) { mem[k] = String(v); }, removeItem: function (k) { delete mem[k]; } } }); } catch (e2) {}
+    }
+  })();
+</script>
+<script src="assets/js/theme.js"></script>
+<script>initTheme();</script>
+</head>
+<body class="fixed-top-nav ">
+<header>
+<nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+<div class="container">
+<a class="navbar-brand title font-weight-lighter" href="index.html"><span class="font-weight-bold">Shabd</span> Sahay</a>
+<button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="sr-only">Toggle navigation</span><span class="icon-bar top-bar"></span><span class="icon-bar middle-bar"></span><span class="icon-bar bottom-bar"></span>
+</button>
+<div class="collapse navbar-collapse navbar-collapse-main text-right" id="navbarNav">
+<ul class="navbar-nav ml-auto navbar-menu-list flex-nowrap">
+<li class="nav-item "><a class="nav-link" href="index.html">about</a></li><li class="nav-item "><a class="nav-link" href="publications.html">publications</a></li><li class="nav-item active"><a class="nav-link" href="projects.html">projects <span class="sr-only">(current)</span></a></li><li class="nav-item "><a class="nav-link" href="cv.html">CV</a></li>
+<li class="toggle-container"><button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"><i class="fa-half-sun-moon" id="light-toggle-system"></i><i class="fa-solid fa-moon" id="light-toggle-dark"></i><i class="fa-solid fa-sun" id="light-toggle-light"></i></button></li>
+</ul>
+</div>
+</div>
+</nav>
+<progress id="progress" value="0"><div class="progress-container"><span class="progress-bar"></span></div></progress>
+</header>
+<div class="container mt-5" role="main">
+<div class="post">
+<header class="post-header"><h1 class="post-title">projects</h1><p class="post-description">research systems and applied ML projects, with measured results.</p></header>
+<article><div class="projects"><a id="research" href="#research"><h2 class="category">research</h2></a><div class="row row-cols-1 row-cols-md-2"><div class="col"><a href="projects/fedvc.html"><div class="card h-100 hoverable"><figure><img src="assets/img/fedvc_repository.png" class="card-img-top paper" alt="FedVC figure" loading="lazy"></figure><div class="card-body">
+<h2 class="card-title">FedVC</h2>
+<p class="card-text">A Git-style governance layer for federated learning: commits, per-client side branches, rollback and verdicts around unmodified FedAvg.</p>
+<div class="row ml-1 mr-1 p-0"></div>
+</div></div></a></div><div class="col"><a href="projects/blockchain-fl.html"><div class="card h-100 hoverable"><figure><img src="assets/img/blockchain_fl.png" class="card-img-top " alt="Blockchain-federated learning figure" loading="lazy"></figure><div class="card-body">
+<h2 class="card-title">Blockchain-federated learning</h2>
+<p class="card-text">Adaptive multi-metric aggregation for fair, cost-efficient fraud detection. Published in Applied Intelligence.</p>
+<div class="row ml-1 mr-1 p-0"></div>
+</div></div></a></div></div><a id="applied-ml" href="#applied-ml"><h2 class="category">applied ml</h2></a><div class="row row-cols-1 row-cols-md-2"><div class="col"><a href="projects/malware-quantization.html"><div class="card h-100 hoverable"><figure><img src="assets/img/malware.png" class="card-img-top " alt="Malware detection, quantized for CPU figure" loading="lazy"></figure><div class="card-body">
+<h2 class="card-title">Malware detection, quantized for CPU</h2>
+<p class="card-text">Semi-supervised malware detection on EMBER2018 under label scarcity, shipped as a 3.95× smaller INT8 ONNX model.</p>
+<div class="row ml-1 mr-1 p-0"></div>
+</div></div></a></div><div class="col"><a href="projects/demand-forecasting.html"><div class="card h-100 hoverable"><figure><img src="assets/img/forecasting.png" class="card-img-top " alt="Synthetic scenarios for demand forecasting figure" loading="lazy"></figure><div class="card-body">
+<h2 class="card-title">Synthetic scenarios for demand forecasting</h2>
+<p class="card-text">Do AI-generated demand scenarios improve retail forecasts? A GMM, LLM and hand-written comparison (null result).</p>
+<div class="row ml-1 mr-1 p-0"></div>
+</div></div></a></div></div></div></article>
+</div>
+</div>
+<footer class="fixed-bottom" role="contentinfo">
+<div class="container mt-0">© Copyright 2026 Shabd Sahay. Based on the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme (MIT).</div>
+</footer>
+<script>window.alFolio = { compatBootstrap: false };</script>
+<script src="assets/js/nav-toggle.js"></script>
+<script src="assets/js/no_defer.js"></script>
+<script defer src="assets/js/common.js"></script>
+<script defer src="assets/js/progress-bar.js"></script>
+</body>
+</html>

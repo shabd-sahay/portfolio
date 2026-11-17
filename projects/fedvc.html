@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>FedVC | Shabd Sahay</title>
+<meta name="author" content="Shabd Sahay">
+<meta name="description" content="Version-controlled governance of client contributions in federated learning">
+<meta name="keywords" content="federated learning, machine learning, byzantine-robust aggregation, IIIT Bhopal, Shabd Sahay">
+<style>:root { --max-content-width: 930px; }</style>
+<link rel="stylesheet" href="../assets/css/tailwind.css">
+<link rel="stylesheet" href="../assets/css/fontawesome.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700&amp;display=swap">
+<link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/main.css">
+
+<link rel="stylesheet" href="../assets/css/custom.css">
+<style id="highlight_theme_light"></style><style id="highlight_theme_dark" media="none"></style>
+<script>
+  // Storage can be blocked in sandboxed viewers; fall back to an in-memory store so the theme toggle still works.
+  (function () {
+    try { window.localStorage.getItem("theme"); }
+    catch (e) {
+      var mem = {};
+      try { Object.defineProperty(window, "localStorage", { value: { getItem: function (k) { return k in mem ? mem[k] : null; }, setItem: function (k, v) { mem[k] = String(v); }, removeItem: function (k) { delete mem[k]; } } }); } catch (e2) {}
+    }
+  })();
+</script>
+<script src="../assets/js/theme.js"></script>
+<script>initTheme();</script>
+</head>
+<body class="fixed-top-nav ">
+<header>
+<nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+<div class="container">
+<a class="navbar-brand title font-weight-lighter" href="../index.html"><span class="font-weight-bold">Shabd</span> Sahay</a>
+<button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="sr-only">Toggle navigation</span><span class="icon-bar top-bar"></span><span class="icon-bar middle-bar"></span><span class="icon-bar bottom-bar"></span>
+</button>
+<div class="collapse navbar-collapse navbar-collapse-main text-right" id="navbarNav">
+<ul class="navbar-nav ml-auto navbar-menu-list flex-nowrap">
+<li class="nav-item "><a class="nav-link" href="../index.html">about</a></li><li class="nav-item "><a class="nav-link" href="../publications.html">publications</a></li><li class="nav-item active"><a class="nav-link" href="../projects.html">projects <span class="sr-only">(current)</span></a></li><li class="nav-item "><a class="nav-link" href="../cv.html">CV</a></li>
+<li class="toggle-container"><button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"><i class="fa-half-sun-moon" id="light-toggle-system"></i><i class="fa-solid fa-moon" id="light-toggle-dark"></i><i class="fa-solid fa-sun" id="light-toggle-light"></i></button></li>
+</ul>
+</div>
+</div>
+</nav>
+<progress id="progress" value="0"><div class="progress-container"><span class="progress-bar"></span></div></progress>
+</header>
+<div class="container mt-5" role="main">
+<div class="post">
+<header class="post-header"><h1 class="post-title">FedVC</h1><p class="post-description">Version-controlled governance of client contributions in federated learning</p></header>
+<article>
+<p><strong>Dec 2025 – present · under review</strong><br><span><strong>Shabd Sahay</strong>, Gagan Vishwakarma, Ripunjay Sharma, Bhupendra Singh Kirar, Yatendra Sahu</span><br><em>Federated Learning · Byzantine-Robust Aggregation · Anomaly Detection</em></p>
+<figure class="fig"><img src="../assets/img/fedvc_repository.png" class="paper" alt="FedVC figure"><figcaption>The FedVC repository. Aggregates are committed to main unless Module 1 rejects them; Module 3 periodically restores the best commit; struck clients push every update to their own side branch; at the cycle boundary Module 4 issues verdicts and main is reset from the best commit.</figcaption></figure>
+<h2>key results</h2>
+<div class="table-responsive"><table class="table table-sm table-borderless"><tr><th scope="row" style="width: 45%">Clients / attackers</th><td>100 / 30 label-flippers</td></tr><tr><th scope="row" style="width: 45%">Poisoned aggregation weight</th><td>0.144–0.227 → 0.009–0.022</td></tr><tr><th scope="row" style="width: 45%">Rounds attackers kept out</th><td>83–89%</td></tr><tr><th scope="row" style="width: 45%">Attackers banned (MNIST, F-MNIST)</th><td>all, 0 ordinary honest clients</td></tr><tr><th scope="row" style="width: 45%">Upload volume</th><td>18–24% less</td></tr></table></div>
+<h2>what I did</h2>
+<ul><li>Built a governance layer that keeps an unmodified FedAvg server inside a Git-style repository: trusted aggregates are committed to main, each suspected client gets a side branch, the best commit is restored at fixed intervals, and isolated clients receive a verdict every cycle.</li><li>Four modules: an adaptive commit gate, graduated trust zoning, a checkpoint restoration scheduler and a verdict classifier.</li><li>With 100 clients (30 label-flippers) on MNIST, Fashion-MNIST and EMNIST-Balanced, cut the poisoned share of aggregation weight from 0.144–0.227 under nine baselines (including Krum, Multi-Krum, FLTrust and FoolsGold) to 0.009–0.022: a 10–16× reduction.</li><li>Kept attackers out of 83–89% of rounds where every baseline admitted them in all rounds, and banned all of them on MNIST and Fashion-MNIST without banning an ordinary honest client, while matching undefended FedAvg's MCC and uploading 18–24% less data.</li><li>Measured and reported the failure cases: under strongly non-IID data (Dirichlet α = 0.1) the poisoned share stayed at 1.5–2.9% vs 15–22% for FedAvg, but many honest clients were also banned; sign-flip attackers were contained rather than banned.</li></ul>
+
+<p class="mt-4"><a href="../projects.html">← all projects</a></p>
+</article>
+</div>
+</div>
+<footer class="fixed-bottom" role="contentinfo">
+<div class="container mt-0">© Copyright 2026 Shabd Sahay. Based on the <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme (MIT).</div>
+</footer>
+<script>window.alFolio = { compatBootstrap: false };</script>
+<script src="../assets/js/nav-toggle.js"></script>
+<script src="../assets/js/no_defer.js"></script>
+<script defer src="../assets/js/common.js"></script>
+<script defer src="../assets/js/progress-bar.js"></script>
+</body>
+</html>

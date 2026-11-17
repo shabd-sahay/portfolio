@@ -1,0 +1,56 @@
+/* Site overrides on top of al-folio's compiled theme (main.css / tailwind.css). */
+
+/* Calmer accent than al-folio's default magenta; dark mode keeps al-folio's own teal. */
+:root {
+  --global-theme-color: #0b7a9e;
+  --global-hover-color: #0b7a9e;
+  --global-code-bg-color: rgba(11, 122, 158, 0.07);
+}
+html[data-theme="dark"] {
+  --global-footer-bg-color: #141415;
+  --global-footer-text-color: #9a9a9a;
+  --global-footer-link-color: #e8e8e8;
+}
+
+/* Solid navbar so page text never shows through it while scrolling. */
+.navbar { opacity: 1; }
+
+/* Profile photo, as on al-folio's about page. */
+.profile { width: 100%; margin: 0 0 1.25rem; }
+@media (min-width: 576px) {
+  .profile.float-right { width: 32%; max-width: 280px; margin-left: 1.75rem; }
+}
+.profile img { border-radius: 6px; }
+.profile .more-info { font-size: 0.85rem; color: var(--global-text-color-light); line-height: 1.5; }
+.profile .more-info p { display: block; }
+
+/* Contact icons: al-folio ships them at 4rem, which dominates the page. */
+.social .contact-icons { font-size: 2rem; }
+.social .contact-icons a { margin: 0 0.6rem; }
+.social { padding-bottom: 1rem; }
+
+/* Two-column project grid (al-folio's compiled CSS only includes the 3-column variant). */
+@media (min-width: 768px) {
+  .row-cols-md-2 > * { flex: 0 0 50%; max-width: 50%; }
+}
+.projects .row > .col { margin-bottom: 1.5rem; }
+.projects .card figure { margin: 0; }
+.projects .card img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  padding: 10px;
+  background: var(--global-code-bg-color);
+}
+.projects .card img.paper { background: #fff; }
+
+/* Figures on project pages. */
+.post figure.fig { margin: 1.5rem 0; }
+.post figure.fig img { width: 100%; border-radius: 6px; }
+.post figure.fig img.paper { background: #fff; padding: 10px; }
+.post figure.fig figcaption { font-size: 0.85rem; color: var(--global-text-color-light); margin-top: 0.5rem; }
+
+/* Author lists: your own name stands out. */
+.publications .author em { font-weight: 600; font-style: normal; }
+@media (max-width: 575.98px) {
+  .profile { max-width: 260px; margin-left: auto; margin-right: auto; }
+}
